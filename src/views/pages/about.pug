@@ -1,0 +1,69 @@
+extends ./layout.pug
+block content
+			section.section.hero
+				ul.socials
+					each item in ['in', 'gh', 'email']
+						li.social__item
+							a(href="" class=`socials__link socials__link_${item}`)
+				a(href="").burger
+				a(href="").down-arrow
+				.hero__title
+					img(src="", alt="").section-title
+					.user.hero__user-block
+						.user__photo
+						.user__name
+						.user__desc
+			section.section.about
+				.about__left
+					svg.triangle.triangle_fill_white
+					.title.about__section-title
+						| Про мене
+					.user-about
+						.user-about__picture
+						.user-about__title.subtitle
+							|Хто я
+						.user-about__text
+							p Я веб-розробник з Києва. Мені 29 років
+							p Це другий параграф. Тут більш детально про мене але не багато тексту. Все це буде заповнюватись через адмінку
+				.about__right
+					svg.triangle.triangle_fill_beige
+					.about-data
+						.about-data__description.about-user-info
+							.about-user-info__title
+								.subtitle 
+									| Чим я можу бути вам корисним
+							.about-user-info__text
+								p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, quia.
+						.about-data__content
+							ul.skills
+									li.skills__item
+										| Frontend
+										.skill-section
+											.skill-section__title= skill
+											ul.skill-section__list
+												each FrontskillList in ['HTML', 'CSS3', 'JavaScript']
+													li.skills-section__item
+														.skill
+															svg.skill__circle
+															.skill__name= FrontskillList
+									li.skills__item
+										| Backend
+										.skill-section
+											.skill-section__title= skill
+											ul.skill-section__list
+												each BackskillList in ['Node.js & npm', 'mySQL', 'Mongo.db']
+													li.skills-section__item
+														.skill
+															svg.skill__circle
+															.skill__name= BackskillList
+									li.skills__item
+										| WorkFlow
+										.skill-section
+											.skill-section__title= skill
+											ul.skill-section__list
+												each WorkkillList in ['Git', 'Webpack', 'Bower']
+													li.skills-section__item
+														.skill
+															svg.skill__circle
+															.skill__name= WorkkillList
+			section.section.map
