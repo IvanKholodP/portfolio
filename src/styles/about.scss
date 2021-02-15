@@ -1,6 +1,55 @@
-body {
-	font-size: 30px;
-	font-weight: 400;
-	font-style: normal;
-	font-family: "Roboto", sans-serif;
+.hero {
+	height: 600px;
+	position: relative;
+	overflow: hidden;
+	.hero__title {
+		@include stance("y");
+		text-align: center;
+		width: 100%;
+		.section-title {
+			display: inline-block;
+		}
+		.hero__user-block {
+			@include stance();
+			.user__photo-img {
+				border-radius: 50%;
+				width: 140px;
+				height: 140px;
+				.user__photo-img img {
+					max-width: 100%;
+					max-height: 100%;
+				}
+			}
+			.user__name {
+				font-size: 35px;
+				line-height: 41px;
+				font-weight: 500;
+				color: #ffffff;
+			}
+			.user__desc {
+				font-size: 16px;
+				line-height: 24px;
+				color: #ffffff;
+			}
+		}
+	}
+	.down-arrow {
+		@include stance("x");
+		bottom: 40px;
+	}
+}
+
+.about {
+	@extend %clearfix;
+	.about__left,
+	.about__right {
+		float: left;
+		width: 50%;
+	}
+	.about__left {
+		background: $white;
+	}
+	.about__right {
+		background: $beige;
+	}
 }

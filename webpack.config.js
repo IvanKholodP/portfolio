@@ -1,7 +1,8 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
 
 const PATHS = {
 	src: path.resolve(__dirname, 'src'),
@@ -23,6 +24,14 @@ module.exports = {
 		new MiniCssExtractPlugin({
 			filename: '[name].css'
 		}),
+		new CopyPlugin(
+			{
+				patterns: [{
+					from: path.resolve(__dirname, "src/img"),
+					to: path.resolve(__dirname, "dist/img")
+				}]
+			}
+		),
 		new CleanWebpackPlugin()
 	],
 	module: {
@@ -45,6 +54,10 @@ module.exports = {
 			{
 				test: /\.s[ac]ss$/,
 				use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
+			},
+			{
+				test: /\.(mp4|jpg|png|svg)$/,
+				use: ['file-loader']
 			}
 		]
 	}

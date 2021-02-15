@@ -2,4 +2,36 @@
 	min-height: 100%;
 	position: relative;
 	overflow: hidden;
+	font-family: "Roboto", sans-serif;
+	font-weight: 400;
 }
+
+@mixin stance($axis: "both") {
+	position: absolute;
+
+	@if $axis == "both" {
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	@if $axis == "x" {
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	@if $axis == "y" {
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}
+
+%clearfix {
+	&::after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+}
+
+$white: #f2f0e8;
+$beige: #e1e1df;
