@@ -2,10 +2,22 @@
 	height: 600px;
 	position: relative;
 	overflow: hidden;
+	.hero__bg {
+		// background-size: contain;
+		// background-position: 50% 50%;
+		// background-repeat: no-repeat;
+		img {
+			max-width: 100%;
+		}
+	}
+
 	.hero__title {
 		@include stance("y");
 		text-align: center;
 		width: 100%;
+		> img {
+			opacity: 0.05;
+		}
 		.section-title {
 			display: inline-block;
 		}
@@ -45,11 +57,77 @@
 	.about__right {
 		float: left;
 		width: 50%;
+		position: relative;
+		.triangle {
+			height: 100px;
+			width: 100%;
+			&_fill {
+				&_white {
+					fill: $white;
+				}
+				&_beige {
+					fill: $beige;
+				}
+			}
+		}
+		.triangle_position {
+			position: absolute;
+			bottom: 100%;
+		}
 	}
 	.about__left {
 		background: $white;
+		.about__section-title {
+			font-weight: bold;
+		}
+		.user-about {
+			display: flex;
+			.user-about__picture {
+				width: 443px;
+				height: 390px;
+				justify-content: center;
+				height: 100%;
+				img {
+					max-width: 100%;
+				}
+			}
+		}
 	}
 	.about__right {
 		background: $beige;
+	}
+}
+.title {
+	font-size: 63px;
+	line-height: 66px;
+	text-transform: uppercase;
+	color: $main-color;
+	font-weight: 500;
+	text-align: center;
+	padding: 45px 200px;
+	position: relative;
+	display: inline-block;
+	background-size: contain;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	img {
+		background-size: contain;
+		background-position: 50% 50%;
+		@include stance("y");
+	}
+	&::after,
+	&::before {
+		content: "";
+		@include stance("y");
+		display: block;
+		background: rgba($main-color, 0.4);
+		width: 25px;
+		height: 5px;
+	}
+	&::after {
+		right: 20%;
+	}
+	&::before {
+		left: 20%;
 	}
 }
