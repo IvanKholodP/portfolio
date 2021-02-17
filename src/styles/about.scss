@@ -3,14 +3,20 @@
 	position: relative;
 	overflow: hidden;
 	.hero__bg {
-		// background-size: contain;
-		// background-position: 50% 50%;
-		// background-repeat: no-repeat;
+		margin: 0 auto;
+		height: 600px;
+		overflow: hidden;
+		position: relative;
+		padding: 0 0 60% 0;
 		img {
-			max-width: 100%;
+			width: 100%;
+			height: 100%;
+			object-fit: fill;
+			position: absolute;
+			top: 0;
+			left: 0;
 		}
 	}
-
 	.hero__title {
 		@include stance("y");
 		text-align: center;
@@ -58,6 +64,7 @@
 		float: left;
 		width: 50%;
 		position: relative;
+		min-height: 850px;
 		.triangle {
 			height: 100px;
 			width: 100%;
@@ -77,57 +84,152 @@
 	}
 	.about__left {
 		background: $white;
+		.title {
+			font-size: 63px;
+			line-height: 66px;
+			text-transform: uppercase;
+			color: $main-color;
+			font-weight: 500;
+			text-align: center;
+			padding: 45px 0;
+			position: relative;
+			display: block;
+			background-size: contain;
+			background-position: 50% 50%;
+			background-repeat: no-repeat;
+			&::after,
+			&::before {
+				content: "";
+				@include stance("y");
+				display: block;
+				background: rgba($main-color, 0.4);
+				width: 25px;
+				height: 5px;
+			}
+			&::after {
+				right: 20%;
+			}
+			&::before {
+				left: 20%;
+			}
+		}
 		.about__section-title {
 			font-weight: bold;
 		}
 		.user-about {
 			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			text-align: center;
 			.user-about__picture {
-				width: 443px;
+				width: 390px;
 				height: 390px;
-				justify-content: center;
-				height: 100%;
-				img {
+				margin: 0 auto;
+				overflow: hidden;
+				& img {
 					max-width: 100%;
+					height: 100%;
+					object-fit: cover;
+					border-radius: 20px;
+				}
+			}
+			.subtitle {
+				color: $main-color;
+				text-transform: uppercase;
+				font-size: 35px;
+				line-height: 41px;
+				padding: 40px 0;
+				position: relative;
+				&::after {
+					content: "";
+					width: 100px;
+					height: 3px;
+					background-color: rgba($main-color, 0.6);
+					display: block;
+					@include stance("x");
+					top: 70%;
+				}
+			}
+			.user-about__text {
+				line-height: 24px;
+				width: 415px;
+				margin: 0 auto;
+				p {
+					padding: 10px 0;
 				}
 			}
 		}
 	}
 	.about__right {
 		background: $beige;
-	}
-}
-.title {
-	font-size: 63px;
-	line-height: 66px;
-	text-transform: uppercase;
-	color: $main-color;
-	font-weight: 500;
-	text-align: center;
-	padding: 45px 200px;
-	position: relative;
-	display: inline-block;
-	background-size: contain;
-	background-position: 50% 50%;
-	background-repeat: no-repeat;
-	img {
-		background-size: contain;
-		background-position: 50% 50%;
-		@include stance("y");
-	}
-	&::after,
-	&::before {
-		content: "";
-		@include stance("y");
-		display: block;
-		background: rgba($main-color, 0.4);
-		width: 25px;
-		height: 5px;
-	}
-	&::after {
-		right: 20%;
-	}
-	&::before {
-		left: 20%;
+		.about-data {
+			padding: 0 0 0 40px;
+			.about-user-info__text {
+				font-size: 16px;
+				line-height: 24px;
+				padding: 0 0 20px 0;
+			}
+			.subtitle {
+				color: $main-color;
+				text-transform: uppercase;
+				font-size: 35px;
+				line-height: 41px;
+				padding: 40px 0;
+				position: relative;
+				width: 350px;
+				margin: 0 auto;
+				text-align: center;
+				&::after {
+					content: "";
+					width: 90px;
+					height: 3px;
+					background-color: rgba($main-color, 0.6);
+					display: block;
+					@include stance("x");
+					top: 80%;
+				}
+			}
+			.skills {
+				display: flex;
+				flex-direction: column;
+				font-size: 28px;
+				line-height: 32px;
+				font-weight: 500;
+				color: $main-color;
+				.skills__item {
+					padding: 10px 0;
+					.skill-section__list {
+						display: flex;
+						.skill {
+							position: relative;
+							padding: 10px 40px 0 0;
+							overflow: hidden;
+							.skill__circle {
+								width: 130px;
+								height: 130px;
+								display: block;
+								fill: transparent;
+								stroke-width: 15;
+								.skills__circle-under {
+									stroke: #dfdcd5;
+								}
+								.skills__circle-above {
+									stroke: #165ad1;
+								}
+							}
+							.skill__name {
+								text-align: center;
+								color: #243994;
+								font-size: 16px;
+								position: absolute;
+								top: 50%;
+								left: 40%;
+								transform: translate(-53%, -40%);
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 }
