@@ -214,12 +214,12 @@
 									stroke: #dfdcd5;
 								}
 								.skills__circle-above {
-									stroke: #165ad1;
+									stroke: $blue;
 								}
 							}
 							.skill__name {
 								text-align: center;
-								color: #243994;
+								color: $blue;
 								font-size: 16px;
 								position: absolute;
 								top: 50%;
@@ -237,4 +237,74 @@
 #map {
 	width: 100%;
 	height: 930px;
+}
+
+.footer {
+	display: flex;
+	flex-direction: column;
+	.footer__row_top {
+		display: flex;
+		flex-direction: row;
+		height: 150px;
+		background-color: $main-color;
+		color: #ffffff;
+		a {
+			color: #ffffff;
+		}
+		.footer__row-common {
+			flex: 0 1 33.333%;
+		}
+		.footer__left {
+			padding: 25px 30px;
+			font-size: 16px;
+			line-height: 24px;
+		}
+		.footer__center {
+			// display: flex;
+			flex-direction: column;
+			padding: 25px 30px;
+			.nav-menu {
+				display: flex;
+				flex-direction: row;
+				font-size: 16px;
+				line-height: 23px;
+				font-weight: 700;
+				.nav-menu__item {
+					padding: 0 0 0 40px;
+				}
+				:first-child {
+					padding: 0;
+				}
+			}
+			.socials_footer {
+				display: flex;
+				flex-direction: row;
+				margin: 0 0 0 -15px;
+				.socials__item {
+					.socials__icon {
+						width: 30px;
+						height: 30px;
+						// opacity: 0.5;
+					}
+					:hover svg {
+						fill: red;
+						cursor: pointer;
+					}
+				}
+			}
+		}
+		.footer__right {
+			padding: 25px 30px;
+			font-size: 16px;
+			line-height: 24px;
+		}
+	}
+	.footer__about-user-name {
+		text-align: center;
+		height: 36px;
+		line-height: 40px;
+		font-size: 16px;
+		color: #ffffff;
+		background-color: $blue;
+	}
 }
