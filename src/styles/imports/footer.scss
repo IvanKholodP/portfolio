@@ -1,0 +1,120 @@
+.footer__block {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	width: 100%;
+	height: 186px;
+	@include adaptive-font(16, 14);
+	color: $white;
+	a {
+		color: $white;
+	}
+	img {
+		max-width: 100%;
+		position: absolute;
+		right: 0;
+		bottom: 0;
+	}
+	.footer__row_top {
+		display: flex;
+		flex-direction: row;
+		height: 150px;
+		background-color: rgba(71, 75, 87, 0.2);
+		position: relative;
+		z-index: 2;
+		.footer__row-common {
+			flex: 0 1 33.333%;
+		}
+		.footer__left {
+			padding: 25px 30px;
+			line-height: 24px;
+		}
+		.footer__center {
+			flex-direction: column;
+			padding: 25px 30px;
+			position: relative;
+			&::after {
+				content: "";
+				width: 1px;
+				height: 100px;
+				background-color: #ffffff;
+				@include stance(y);
+				left: 0%;
+			}
+			&::before {
+				content: "";
+				width: 1px;
+				height: 100px;
+				background-color: #ffffff;
+				@include stance(y);
+				right: 0%;
+			}
+			.nav-menu {
+				display: flex;
+				flex-direction: row;
+				line-height: 23px;
+				font-weight: 700;
+				padding: 0 0 20px 0;
+				.nav-menu__list {
+					padding: 0 0 0 40px;
+				}
+				:first-child {
+					padding: 0;
+				}
+				a:hover {
+					color: $blue;
+				}
+			}
+			.socials_footer {
+				display: flex;
+				flex-direction: row;
+				margin: 0 0 0 -15px;
+				.socials__item {
+					.socials__icon {
+						width: 40px;
+						height: 35px;
+						fill: $white;
+						margin: 0 10px 0 0;
+					}
+					:hover svg {
+						fill: $blue;
+						cursor: pointer;
+					}
+				}
+			}
+		}
+		.footer__right {
+			padding: 25px 30px;
+			line-height: 24px;
+			.contacts__item {
+				a {
+					position: relative;
+					display: inline-block;
+				}
+				a::after {
+					display: block;
+					content: "";
+					background-color: $white;
+					height: 3px;
+					width: 0%;
+					@include stance("x");
+					transition: width 0.5s ease-in-out;
+				}
+				& a:hover::after,
+				& a:focus::after {
+					width: 100%;
+				}
+			}
+		}
+	}
+	.footer__row_bottom {
+		.footer__about-user-name {
+			position: relative;
+			z-index: 2;
+			text-align: center;
+			height: 36px;
+			line-height: 40px;
+			background-color: rgba(22, 90, 209, 0.5);
+		}
+	}
+}

@@ -1,62 +1,3 @@
-.hero {
-	height: 600px;
-	position: relative;
-	overflow: hidden;
-	.hero__bg {
-		margin: 0 auto;
-		height: 600px;
-		overflow: hidden;
-		position: relative;
-		padding: 0 0 60% 0;
-		img {
-			width: 100%;
-			height: 100%;
-			object-fit: fill;
-			position: absolute;
-			top: 0;
-			left: 0;
-		}
-	}
-	.hero__title {
-		@include stance("y");
-		text-align: center;
-		width: 100%;
-		> img {
-			opacity: 0.05;
-		}
-		.section-title {
-			display: inline-block;
-		}
-		.hero__user-block {
-			@include stance();
-			.user__photo-img {
-				border-radius: 50%;
-				width: 140px;
-				height: 140px;
-				.user__photo-img img {
-					max-width: 100%;
-					max-height: 100%;
-				}
-			}
-			.user__name {
-				font-size: 35px;
-				line-height: 41px;
-				font-weight: 500;
-				color: #ffffff;
-			}
-			.user__desc {
-				font-size: 16px;
-				line-height: 24px;
-				color: #ffffff;
-			}
-		}
-	}
-	.down-arrow {
-		@include stance("x");
-		bottom: 40px;
-	}
-}
-
 .about {
 	@extend %clearfix;
 	.about__left,
@@ -68,6 +9,7 @@
 		.triangle {
 			height: 100px;
 			width: 100%;
+			// overflow: hidden;
 			&_fill {
 				&_white {
 					fill: $white;
@@ -85,7 +27,7 @@
 	.about__left {
 		background: $white;
 		.title {
-			font-size: 63px;
+			@include adaptive-font(63, 24);
 			line-height: 66px;
 			text-transform: uppercase;
 			color: $main-color;
@@ -136,7 +78,7 @@
 			.subtitle {
 				color: $main-color;
 				text-transform: uppercase;
-				font-size: 35px;
+				@include adaptive-font(35, 21);
 				line-height: 41px;
 				padding: 40px 0;
 				position: relative;
@@ -151,6 +93,7 @@
 				}
 			}
 			.user-about__text {
+				@include adaptive-font(16, 14);
 				line-height: 24px;
 				width: 415px;
 				margin: 0 auto;
@@ -165,14 +108,15 @@
 		.about-data {
 			padding: 0 0 0 40px;
 			.about-user-info__text {
-				font-size: 16px;
+				@include adaptive-font(16, 14);
 				line-height: 24px;
 				padding: 0 0 20px 0;
 			}
 			.subtitle {
 				color: $main-color;
 				text-transform: uppercase;
-				font-size: 35px;
+				@include adaptive-font(35, 21);
+				font-weight: 500;
 				line-height: 41px;
 				padding: 40px 0;
 				position: relative;
@@ -192,7 +136,7 @@
 			.skills {
 				display: flex;
 				flex-direction: column;
-				font-size: 28px;
+				@include adaptive-font(28, 21);
 				line-height: 32px;
 				font-weight: 500;
 				color: $main-color;
@@ -220,11 +164,13 @@
 							.skill__name {
 								text-align: center;
 								color: $blue;
-								font-size: 16px;
+								@include adaptive-font(16, 14);
 								position: absolute;
 								top: 50%;
-								left: 40%;
-								transform: translate(-53%, -40%);
+								left: 50%;
+								transform: translate(-83%, -45%);
+								width: 68px;
+								overflow: hidden;
 							}
 						}
 					}
@@ -234,77 +180,11 @@
 	}
 }
 
-#map {
-	width: 100%;
-	height: 930px;
-}
-
-.footer {
-	display: flex;
-	flex-direction: column;
-	.footer__row_top {
-		display: flex;
-		flex-direction: row;
-		height: 150px;
-		background-color: $main-color;
-		color: #ffffff;
-		a {
-			color: #ffffff;
-		}
-		.footer__row-common {
-			flex: 0 1 33.333%;
-		}
-		.footer__left {
-			padding: 25px 30px;
-			font-size: 16px;
-			line-height: 24px;
-		}
-		.footer__center {
-			// display: flex;
-			flex-direction: column;
-			padding: 25px 30px;
-			.nav-menu {
-				display: flex;
-				flex-direction: row;
-				font-size: 16px;
-				line-height: 23px;
-				font-weight: 700;
-				.nav-menu__item {
-					padding: 0 0 0 40px;
-				}
-				:first-child {
-					padding: 0;
-				}
-			}
-			.socials_footer {
-				display: flex;
-				flex-direction: row;
-				margin: 0 0 0 -15px;
-				.socials__item {
-					.socials__icon {
-						width: 30px;
-						height: 30px;
-						// opacity: 0.5;
-					}
-					:hover svg {
-						fill: red;
-						cursor: pointer;
-					}
-				}
-			}
-		}
-		.footer__right {
-			padding: 25px 30px;
-			font-size: 16px;
-			line-height: 24px;
-		}
-	}
-	.footer__about-user-name {
-		text-align: center;
-		height: 36px;
-		line-height: 40px;
-		font-size: 16px;
-		color: #ffffff;
-		background-color: $blue;
+.maps {
+	position: relative;
+	z-index: 10;
+	#map {
+		width: 100%;
+		height: 930px;
 	}
 }

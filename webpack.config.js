@@ -21,6 +21,10 @@ module.exports = {
 			template: PATHS.src + '/views/pages/about.pug',
 			filename: './about.html'
 		}),
+		new HTMLWebpackPlugin({
+			template: PATHS.src + '/views/pages/blog.pug',
+			filename: './blog.html'
+		}),
 		new MiniCssExtractPlugin({
 			filename: '[name].css'
 		}),
