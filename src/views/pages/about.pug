@@ -9,7 +9,12 @@ block content
 						preserveAspectRatio="none" 
 						class="triangle triangle_fill_white triangle_position")
 						polygon(points="0,0 0,100 1000,100")
-					+title ('Про мене', 'about_header.png', 'about__section-title')
+					svg(
+						viewbox="0 0 1000 100" 
+						preserveAspectRatio="none" 
+						class="triangle triangle_fill_beige triangle_position triangle__visible")
+						polygon(points="0,100 1000,100 1000,0")
+					+title ('Про мене', 'vector_about.png', 'about__section-title')
 					.user-about
 						.user-about__picture
 							img(src="./img/avatar.jpg", alt="")
@@ -17,12 +22,12 @@ block content
 							|Хто я
 						.user-about__text
 							p Я веб-розробник з Києва. Мені 29 років
-							p Це другий параграф. Тут більш детально про мене але не багато тексту. Все це буде заповнюватись через адмінку
+							p Це другий параграф. Тут більш детально про мене але не багато тексту. Все це буде заповнюватись через адмінку.
 				.about__right
 					svg(
 						viewbox="0 0 1000 100" 
 						preserveAspectRatio="none" 
-						class="triangle triangle_fill_beige triangle_position")
+						class="triangle triangle_fill_beige triangle_position triangle__visible")
 						polygon(points="0,100 1000,100 1000,0")
 					.about-data
 						.about-data__description.about-user-info

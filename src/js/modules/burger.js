@@ -1,4 +1,3 @@
-console.log('hello world')
 let burger = document.querySelector('.header__burger');
 
 burger.addEventListener('click', function (e) {
