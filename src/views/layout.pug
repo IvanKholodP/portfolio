@@ -1,11 +1,17 @@
+block variables
+	-var autor = 'Іван Холод'
+	-var desc = 'Особистий сайт Front-end Developer'
+
 include mixins
+
+
 
 <!DOCTYPE html>
 html(lang="uk")
 	head
 		meta(charset="UTF-8")
 		meta(name="viewport", content="width=device-width, initial-scale=1.0")
-		title About
+		title #{title}
 	body
 		include ../img/icons/sprite.svg
 		block content

@@ -1,6 +1,11 @@
 extends  ../layout.pug 
+block variables
+	- var title = 'About';
+
 block content
 		.wrapper
+			- var autor = 'Іван Холод';
+			- var desc = 'Особистий сайт Front-end Developer';
 			include ../blocks/header.pug
 			section.section.about
 				.about__left

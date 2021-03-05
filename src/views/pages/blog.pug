@@ -1,4 +1,24 @@
 extends ../layout.pug
+block variables
+	- var title = 'Blog';
+
 block content
 		.wrapper
+			- var autor = 'Блог';
+			- var desc = 'Мої статті';
 			include ../blocks/header.pug
+			section.section.blog
+				.blog_triangle
+					.triangle_left
+						svg(
+							viewbox="0 0 1000 100" 
+							preserveAspectRatio="none" 
+							class="triangle triangle_fill triangle_position")
+							polygon(points="0,0 0,100 1000,100")
+					.triangle_right
+						svg(
+							viewbox="0 0 1000 100" 
+							preserveAspectRatio="none" 
+							class="triangle triangle_fill triangle_position")
+							polygon(points="0,100 1000,100 1000,0")
+			include ../blocks/footer.pug
